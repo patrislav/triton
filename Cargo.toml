@@ -4,5 +4,13 @@ version = "0.1.0"
 authors = ["Patryk Kalinowski <patrislav7@gmail.com>"]
 edition = "2018"
 
+description = "Ternary stack machine CPU architecture and VM"
+reporitory = "https://github.com/patrislav/triton"
+readme = "README.md"
+license = "MIT"
+
+[badges]
+maintenance = { status = "experimental" }
+
 [dependencies]
 bct = "0.1.0"
