@@ -40,7 +40,7 @@ fn decode_first_trybble(value: i8, next: i8, pc: &mut i32) -> Result<Instr, Deco
   }
 }
 
-fn decode_second_trybble(value: i8, mem: &Memory, pc: &mut i32) -> Result<Instr, DecodeError> {
+fn decode_second_trybble(value: i8, mem: &dyn Memory, pc: &mut i32) -> Result<Instr, DecodeError> {
   match value {
     // Load next tryte
     -12 => {
@@ -78,7 +78,7 @@ fn decode_second_trybble(value: i8, mem: &Memory, pc: &mut i32) -> Result<Instr,
   }
 }
 
-pub fn decode_instruction(_isa: &ISA, mem: &Memory, pc: i32) -> (Result<DecodeResult, DecodeError>, i32) {
+pub fn decode_instruction(_isa: &ISA, mem: &dyn Memory, pc: i32) -> (Result<DecodeResult, DecodeError>, i32) {
   let mut next_pc = pc;
   let val = mem.load_tryte(next_pc);
 

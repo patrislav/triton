@@ -54,7 +54,7 @@ impl<M: Memory> Cpu<M> {
     self.estack.push(c);
   }
 
-  fn over_t(&mut self) {
+  fn _over_t(&mut self) {
     let (a, b) = self.pop2();
     self.estack.push(b.clone());
     self.estack.push(a);
@@ -76,19 +76,19 @@ impl<M: Memory> Cpu<M> {
     self.estack.push(result);
   }
   
-  fn inc_t(&mut self) {
+  fn _inc_t(&mut self) {
     let val = self.pop();
     let (result, _carry) = Tryte::add(&val, &Tryte::from(1));
     self.estack.push(result);
   }
 
-  fn sub_t(&mut self) {
+  fn _sub_t(&mut self) {
     let (val1, val2) = self.pop2();
     let (result, _carry) = Tryte::sub(&val2, &val1);
     self.estack.push(result);
   }
 
-  fn dec_t(&mut self) {
+  fn _dec_t(&mut self) {
     let val = self.pop();
     let (result, _carry) = Tryte::sub(&val, &Tryte::from(1));
     self.estack.push(result);
