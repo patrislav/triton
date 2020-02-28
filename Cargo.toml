@@ -1,0 +1,8 @@
+[package]
+name = "triton"
+version = "0.1.0"
+authors = ["Patryk Kalinowski <patrislav7@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+bct = "0.1.0"
